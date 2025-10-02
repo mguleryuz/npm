@@ -8,7 +8,7 @@
 
 </div>
 
-## Inverter / NPM package Template
+## 0xMEMO NPM package Template
 
 Bun + Npm + Typescript + Standard Version + Flat Config Linting + Husky + Commit / Release Pipeline
 

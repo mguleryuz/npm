@@ -20,14 +20,14 @@
     "dist"
   ],
   "scripts": {
-    "watch": "tsc -w",
-    "type-check": "tsc-files --pretty --project ./tsconfig.json --noEmit --module ESNext --declaration",
+    "watch": "bun run script/tsgo-watch.ts",
+    "type-check": "tsgo --noEmit --pretty",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint .",
     "fill-placeholders": "sh ./script/fill-placeholders.sh",
-    "build": "bun clean && bun build:cjs && bun build:esm && bun build:types",
-    "build:cjs": "tsc --project ./tsconfig.cjs.json && tsc-alias --outDir ./dist/cjs && ts-add-js-extension --dir=dist/cjs --showchanges=false",
-    "build:esm": "tsc --project ./tsconfig.esm.json && tsc-alias --outDir ./dist/esm && ts-add-js-extension --dir=dist/esm --showchanges=false",
+    "build": "bun build:cjs && bun build:esm && bun build:types",
+    "build:cjs": "tsc --project ./tsconfig.cjs.json && tsc-alias --outDir ./dist/cjs && ts-add-js-extension --dir=dist/cjs --showprogress=false",
+    "build:esm": "tsc --project ./tsconfig.esm.json && tsc-alias --outDir ./dist/esm && ts-add-js-extension --dir=dist/esm --showprogress=false",
     "build:types": "tsc --project ./tsconfig.types.json && tsc-alias --outDir ./dist/types",
     "clean": "rm -rf dist tsconfig.tsbuildinfo node_modules bun.lockb",
     "postinstall": "husky || true",
@@ -40,9 +40,6 @@
     "release:pub": "git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "bun type-check"
-    ],
     "*.{ts,tsx,js,jsx,mjs,cjs,json,md,css}": [
       "eslint --fix",
       "prettier --write"
@@ -50,7 +47,7 @@
   },
   "resolutions": {
     "eslint": "^9.17.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.8.0"
   },
   "dependencies": {
     "type-fest-4": "npm:type-fest@latest",

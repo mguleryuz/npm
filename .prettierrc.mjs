@@ -5,7 +5,7 @@ export default {
   singleQuote: true,
   trailingComma: 'es5',
   arrowParens: 'always',
-  printWidth: 80,
+  printWidth: 100,
   plugins: ['@ianvs/prettier-plugin-sort-imports'],
   importOrder: [
     '<THIRD_PARTY_MODULES>',

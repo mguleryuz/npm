@@ -63,6 +63,7 @@ The main entry `src/index.ts` exports APIs that work in both server and client e
 - **Prefer** normal imports over lazy imports if there is no conditional logic
 - **Never** use `as any` if not necessary
 - **Keep builds reproducible**: avoid non-deterministic steps
+- **Never** build to test the changes are working, use `bun type-check` instead
 
 ## Code Standards
 
