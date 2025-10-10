@@ -1,7 +1,6 @@
 {
-  "typescript.experimental.useTsgo": true,
   "include": ["src", "example", "test", "script"],
-  "exclude": ["**/bak/*", "dist"],
+  "exclude": ["**/bak/*", "dist", "node_modules"],
   "compilerOptions": {
     "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
 
@@ -25,6 +24,8 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
+    "sourceMap": false,
+    "removeComments": true,
 
     // Language and environment
     "moduleResolution": "Bundler",
@@ -33,11 +34,6 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
 
     // Skip type checking for node modules
-    "skipLibCheck": true,
-
-    // Type aliasing
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "skipLibCheck": true
   }
 }

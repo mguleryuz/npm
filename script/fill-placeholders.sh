@@ -67,5 +67,3 @@ for PH in "<x_username>" "<brand_name>" "<github_username>" "<pkg_description>" 
 done
 
 echo "Done."
-
-

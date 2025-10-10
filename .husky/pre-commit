@@ -1,2 +1,2 @@
 bun type-check
-bunx lint-staged
+bun lint-staged

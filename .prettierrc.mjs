@@ -6,25 +6,16 @@ export default {
   trailingComma: 'es5',
   arrowParens: 'always',
   printWidth: 100,
-  plugins: ['@ianvs/prettier-plugin-sort-imports'],
-  importOrder: [
-    '<THIRD_PARTY_MODULES>',
-    '',
-    '^types$',
-    '^@/types/(.*)$',
-    '^@/config/(.*)$',
-    '^@/lib/(.*)$',
-    '^@/utils/(.*)$',
-    '',
-    '^/deploy(.*)$',
-    '^/get(.*)$',
-    '^/module(.*)$',
-    '',
-    '^[./]',
+  plugins: ['prettier-plugin-sh'],
+
+  // ---------------------------
+  // Override Rules
+  overrides: [
+    {
+      files: ['.env*'],
+      options: {
+        parser: 'sh',
+      },
+    },
   ],
-  importOrderSeparation: false,
-  importOrderSortSpecifiers: true,
-  importOrderBuiltinModulesToTop: true,
-  importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
-  importOrderMergeDuplicateImports: true,
 }

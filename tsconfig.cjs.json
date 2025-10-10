@@ -8,7 +8,6 @@
     "outDir": "./dist/cjs",
     "sourceMap": true,
     "rootDir": "./src",
-    "removeComments": true,
     "verbatimModuleSyntax": false
   }
 }

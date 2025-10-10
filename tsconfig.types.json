@@ -9,7 +9,7 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "removeComments": false
   }
 }
